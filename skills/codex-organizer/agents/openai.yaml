@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Organizer"
+  short_description: "Review clutter and organize with your decisions"
+  default_prompt: "Use $codex-organizer to review my projects and chats, explain each candidate's value, and ask before changing it."
