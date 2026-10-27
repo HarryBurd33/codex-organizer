@@ -51,6 +51,8 @@ Archive means moving a file to a chosen archive directory, or a native recoverab
 
 The helper expects a single cooperating writer and stable files/roots; it is not a sandbox or transactional filesystem. It makes no universal crash/network-filesystem durability claim. Read [file-action details](skills/codex-organizer/references/file-actions.md) and [native-tool limits](skills/codex-organizer/references/codex.md).
 
+Global installation was verified through native Codex discovery in two unrelated working directories. All seven installed skill files matched the tested public source. The 58 automated checks passed in [public CI](https://github.com/HarryBurd33/codex-organizer/actions/runs/40456126147) on Ubuntu/macOS with Python 3.11/3.13.
+
 ## Verify the package
 
 ```sh
