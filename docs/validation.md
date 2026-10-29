@@ -20,3 +20,43 @@ File operations support local POSIX regular files within one filesystem. Windows
 The official Skill Installer installed immutable revision `dba0e78456c1b9e3f5b4af87c630180632e8c481`. All seven installed skill files matched the reviewed source hashes. A real local Codex app-server `skills/list` with forced reload found exactly one enabled `codex-organizer` at **user** scope from two unrelated working directories, with no load errors and no model turn. The [initial public CI run](https://github.com/HarryBurd33/codex-organizer/actions/runs/40456126147) passed on Ubuntu and macOS with Python 3.11 and 3.13. These are distribution facts, not guarantees of future model decisions. The workflow instructs the agent to respect decisions; authored/model scenarios do not prove it will do so in every context.
 
 Only sanitized source, synthetic tests, documentation and notices are published. Private checkpoints, native object IDs, user chat contents and actual cleanup records stay outside public history.
+
+## Checkpoint reconciliation and native handoff — 2026-10-29
+
+A later maintenance request found a valid Organizer checkpoint in a shared parent
+workspace that had gained unrelated files and three independent nested Git
+repositories. Task Checkpoint 0.8.3 reported changed context and refused to flatten
+those repositories into its ordinary file snapshot. This was a preservation
+boundary, not a persistent quota pause or a defect requiring weaker checks.
+
+The authorized repair first created a private archive of the unrelated workspace
+areas, including nested Git history and ignored files. Archive members and original
+files were compared by content hash, mode and link target; all three repository
+heads and working-tree states were preserved. Only then were the exact unrelated
+paths added to the parent repository's local exclude file. Its prior contents,
+the tracked ignore file, the Organizer binding and earlier checkpoints were retained.
+No original work was moved or deleted. A fresh checkpoint verified and its context
+inspection cleared the earlier repository and nested-boundary conflicts.
+
+For a similar repair, inspect the actual boundaries and preserve them separately
+before considering exact parent exclusions. Do not use a broad ignore rule to hide
+unsaved work, rebind the parent to another task, or take an occupied lease. Retain
+the separate export and its manifest alongside the checkpoint for recovery; a
+normal task snapshot does not automatically include an external preservation archive.
+
+The maintenance chat then exercised the optional Model Switcher 0.5.0 native
+integration: a verified checkpoint preceded a configured selection change from
+Sol Medium to Astra Extra High for preservation review. Native evidence showed
+the origin completed and a distinct heartbeat turn received the handoff. That
+receiver rechecked source, authority, quota, checkpoint and the retained task lease,
+claimed the intent once, and deleted its exact finite schedule before running the
+review and continuing the authorized documentation work. The guard provides
+at-most-once task admission; configured model metadata is not per-turn inference
+telemetry. This observed maintenance handoff does not guarantee delivery in every
+chat or make Organizer a background service.
+
+The receiving review confirmed the original work, profile settings, permissions
+and all seven installed Organizer skill files were unchanged. Organizer's existing
+58-test suite and package validator remained the acceptance checks. This update
+records the reconciliation procedure and observed integration; it changes no
+Organizer runtime or installation behavior.
