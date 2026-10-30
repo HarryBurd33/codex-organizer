@@ -161,3 +161,48 @@ coverage and no-source/no-write behavior. **66 public tests** and the **20-file
 package validator** pass locally. The Maintenance suite has **29 checks**, including
 host-style discovery metadata and launch from an unrelated directory. Hosted CI
 must be observed on the newly published commit before claiming that result.
+
+## Guarded updater and completed source mapping — 2026-10-30
+
+The optional `scripts/update.py` now previews and recoverably updates a known
+unmodified Organizer installation. Its shipped baseline covers version 0.2.2;
+it refuses unknown/customized installs, downgrades and changed same-version
+payloads. It does not upgrade unrelated personal skills or fetch remote code.
+Project/checkpoint-bound targets require separate ownership review. The source
+audit remains read-only and does not grant update permission.
+
+The updater has **32 local regression checks**; the full public suite now contains
+**98 checks**, with a **23-file package validator**. macOS-specific ACL cases are
+explicitly skipped on other platforms. Python 3.9 compatibility is checked
+separately from the hosted Python 3.11/3.13 matrix.
+
+The updater stages from a metadata-preserving clone of the existing installation,
+changes only the staged payload, verifies common paths' ownership, modes,
+attributes and ACLs, and retains the original directory as a backup. A frozen
+preview and an exclusive cooperating-updater lock protect admission. Recovery
+checks both copies before changing anything and retains the displaced updated
+copy. Metadata copy failures, stale state and conflicting destinations preserve
+original data for inspection. These checks do not establish atomic multi-rename
+or power-loss behavior, nor protection against malicious concurrent path changes.
+
+Native macOS fixtures exercised actual directory upgrade/restore, original inode
+and metadata recovery, ACL and extended-attribute retention, preview/no-op paths,
+custom edits, unknown releases, extra files/folders, unsafe paths, stale previews,
+foreign/replaced locks, ownership restrictions, backup privacy, source cache
+exclusions, injected activation and restore failures, and competing destinations.
+The real global installation returned `already-current`; acknowledged apply also
+performed no replacement. All seven file bytes, inode identities, permissions,
+ownership, attributes and ACL observations remained unchanged, with no lock or
+backup created. No real personal skill needed replacement in this phase.
+
+The remaining Prompt Forge source was located in the user's public repository.
+All five installed payload files matched that repository's observed immutable
+tree, closing the source gap. The source register now identifies candidates for
+all 15 personal installations. Identified sources and snapshot equality remain
+distinct from future source authority, freshness and permission checks.
+
+Portable Maintenance distribution still needs an explicit setup/binding workflow
+and a clean-host test of its external runtimes. The machine-specific local package
+is not published here. Windows/cross-filesystem moves, directory/root project moves
+and authoritative sidebar readback retain their independent contracts and host
+verification requirements. Existing refusal boundaries are unchanged.

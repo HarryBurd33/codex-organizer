@@ -26,6 +26,50 @@ It should be available on the next turn. If it does not appear, start a fresh ch
 
 ## Use it
 
+### Update an existing installation
+
+The optional updater previews by default. It accepts an unmodified installation
+matching a shipped release manifest, and applies only a newer stable skill
+version. Unknown/customized payloads, extra installed files or folders, stale
+previews, project/checkpoint-owned targets and occupied updater locks require
+review. A source matching the current installation returns `already-current`
+without creating a lock, backup or replacement.
+
+From a reviewed checkout, choose an existing private backup parent on the same
+filesystem as the installation, owned by you and not writable by others:
+
+```sh
+python3 scripts/update.py --backup-parent /path/to/private-backups
+python3 scripts/update.py --backup-parent /path/to/private-backups --apply --expect-preview REVIEWED_PREVIEW_SHA256
+```
+
+Use `--dest /path/to/skills` on both commands for a custom independent skills
+parent. The updater preserves the original directory in a recovery folder and
+verifies existing paths' ownership, permission bits, attributes and ACLs in the
+staged replacement before activation. It refuses metadata it cannot preserve.
+New resources come from the reviewed source. Source Python caches are excluded;
+extra files in the installed skill are preserved by refusing the update.
+
+To preview and apply recovery, use the receipt returned by the successful update:
+
+```sh
+python3 scripts/update.py --restore-receipt /path/to/operation/receipt.json
+python3 scripts/update.py --restore-receipt /path/to/operation/receipt.json --apply --expect-preview REVIEWED_RESTORE_SHA256
+```
+
+Restore refuses if the backup or updated installation changed. Both old and new
+copies are retained after a successful restore. No force-overwrite option is
+provided. Keep actual receipts private; they include local paths and metadata.
+
+Replacement supports local POSIX filesystems and stable paths with one cooperating
+writer. macOS uses its built-in `cp`, `ls` and `xattr` utilities; Linux uses Python's
+filesystem APIs. The updater lock does not lock other editors. Keep the skill idle
+while applying: switching uses two directory renames, and an interruption or a
+competing destination can require manual reconciliation. Windows, network
+filesystem behavior and power-loss durability are not qualified by these tests.
+
+### Run the organizer
+
 In a local Codex chat:
 
 ```text

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "releases": {
+    "0.2.2": {
+      "LICENSE": "747b45fb70bbc46628a8a6b642f3c1283899f54b16f83398b527d96492d364ae",
+      "SKILL.md": "9cf82452372f72e5fd8e2fd36df9097b94577669ee28014c00773477bd4db6bd",
+      "references/codex.md": "747d560a0b8219d392cad3c3e6cc7f27318568245434ff7e5c10bb0ef00f8cd6",
+      "references/file-actions.md": "83913f57064a61a245ee9ab9c24e29b04fa4cc7c85197499245b5adb9b5f5d9c",
+      "agents/openai.yaml": "4b0ef808491f0ffbb12418252d69e0acab5819ec2ee84cbbe93a9fbfe22bfded",
+      "scripts/file_actions.py": "51913b7e4caa1b25a0162944449496dd48b6cdd7bcc854cbd2bf80b5ff868fbb",
+      "scripts/inventory.py": "331772e0ee7d69ab0cb0a7d28f4d8e9a2cb785d8b07a6b7d4d501ffca5f2507e"
+    }
+  }
+}
