@@ -55,6 +55,26 @@ Global installation was verified through native Codex discovery in two unrelated
 
 ## Verify the package
 
+To inventory existing installations and candidate update sources without changing
+them, create a **private** registry containing explicit local paths:
+
+```json
+{"skills":[{"name":"example","installed":"/path/to/installed/example","candidates":["/path/to/reviewed/source/example"]}]}
+```
+
+```sh
+python3 scripts/audit_sources.py --registry /path/to/private-registry.json
+```
+
+The report contains versions, per-file hashes, differences and coverage limits.
+It ignores listed installation receipts and Python/Git caches without removing
+them. It refuses linked/traversing roots and reports skipped linked files or
+limits as incomplete. Use stable files and roots; this is not a sandbox against
+concurrent path replacement. Byte equality alone does not prove canonical source,
+current upstream release, ownership or update permission. Verify those separately.
+The command does not fetch, install, overwrite, acquire leases or upload results.
+Its JSON includes local paths; keep actual registries and reports private.
+
 ```sh
 python3 scripts/validate.py
 python3 -B -m unittest discover -s tests -v

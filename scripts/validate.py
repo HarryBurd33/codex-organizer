@@ -13,6 +13,7 @@ REQUIRED = {
     'README.md', 'LICENSE', '.gitignore', '.github/workflows/tests.yml',
     'docs/validation.md', 'docs/provenance.md', 'scripts/install.py', 'scripts/validate.py',
     'tests/test_inventory.py', 'tests/test_file_actions.py', 'tests/test_install.py',
+    'scripts/audit_sources.py', 'tests/test_audit_sources.py',
     'skills/codex-organizer/SKILL.md', 'skills/codex-organizer/LICENSE',
     'skills/codex-organizer/agents/openai.yaml',
     'skills/codex-organizer/scripts/inventory.py', 'skills/codex-organizer/scripts/file_actions.py',

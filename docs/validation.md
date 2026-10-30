@@ -120,3 +120,44 @@ preservation and publication review assigned to Astra Extra High when authorized
 and available. These are future routing recommendations, not claims that a model
 was changed. Fresh allowance must be checked before substantial follow-up work;
 this plan creates no collector, background schedule or paid API budget.
+
+## Maintenance attachment and skill source audit — 2026-10-30
+
+A later native connection attempt produced a concrete discovery failure:
+the local adapter rejected the host's `tools/list` parameters. Maintenance 0.1.3
+accepts an absent/null cursor and protocol request metadata, while retaining its
+two no-argument observation tools and rejecting unknown pagination or scope.
+Both launch formats now anchor the Python entrypoint to the plugin root, and the
+documented compatibility overlay supplies the local settings without an inline
+presentation-only override. Those packaging checks are distinct from native calls.
+
+The installed server was registered through the supported native MCP connection
+path. Existing-daemon status then reported Maintenance 0.1.3, both exact tool
+names, and no discovery error. No model turn, app restart, broad MCP reload,
+permission override or completed task replay was needed. The current chat's tool
+catalogue still needs a later turn to expose the newly connected tools; discovery
+is not a claim that those chat tool calls already ran.
+
+The native CLI's MCP registration rewrites the server map and normalized an
+explicit empty argument list and numeric timeout type in another entry. A prior
+independent baseline with exactly the same intake config digest allowed both
+explicit settings to be restored and every original configuration leaf/empty
+table to be checked. The only new namespace is the authorized read-only server.
+Future installers should preserve complete before-state and compare all settings;
+native CLI success alone does not prove a narrow edit.
+
+Personal source inspection covered 15 installations. Fourteen have an identified
+local candidate, managed installation source, or repository-backed source; one
+source remains unknown. Two newer installed entrypoints matched their current
+public repository blobs, avoiding a downgrade from older local authoring copies.
+Local byte equality, source provenance, current remote head, ownership and update
+authority remain separate observations. No personal skill was overwritten, and
+no source project's lease was acquired. Private inventories are not distributed.
+
+The public package now includes an optional read-only source audit command and
+eight regression checks: authority/freshness uncertainty, same-version local edits,
+new source files, linked/traversing paths, explicit receipt exclusions, partial
+coverage and no-source/no-write behavior. **66 public tests** and the **20-file
+package validator** pass locally. The Maintenance suite has **29 checks**, including
+host-style discovery metadata and launch from an unrelated directory. Hosted CI
+must be observed on the newly published commit before claiming that result.
