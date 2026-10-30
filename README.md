@@ -62,6 +62,8 @@ python3 -B -m unittest discover -s tests -v
 
 No third-party Python packages, API key, background service or paid model calls are required by the helpers. The conversational skill uses your normal Codex access. Detailed observed results and untested boundaries are in [validation](docs/validation.md). User run logs belong outside the installed skill and are not uploaded by these helpers.
 
+The [current verification and remaining-work plan](docs/validation.md#update-verification-and-remaining-work--2026-10-30) distinguishes the shipped Organizer skill from optional local maintenance tools. Existing installations should be compared with the current skill files before replacement; the installer continues to protect an existing copy and its customizations.
+
 ## License
 
 [MIT](LICENSE). A full license notice is also included in the installed skill. This is an independent community skill, not an official OpenAI product. [Provenance](docs/provenance.md).

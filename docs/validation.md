@@ -60,3 +60,55 @@ and all seven installed Organizer skill files were unchanged. Organizer's existi
 58-test suite and package validator remained the acceptance checks. This update
 records the reconciliation procedure and observed integration; it changes no
 Organizer runtime or installation behavior.
+
+## Update verification and remaining work — 2026-10-30
+
+Organizer remains version **0.2.2**. This documentation update does not change its
+runtime or overwrite installed customizations. All seven global skill files were
+compared with the public source and were identical. The package validator and all
+58 Organizer tests passed again on local Python 3.15. The existing CI workflow
+continues to test Ubuntu/macOS with Python 3.11/3.13; a local pass does not establish
+the outcome of a new hosted run.
+
+The authoring machine's desktop updater reported its configured production channel
+up to date. Its separate Homebrew Codex CLI was upgraded from 0.165.0 to the
+[latest stable 0.166.0 release](https://github.com/openai/codex/releases/tag/rust-v0.166.0).
+These observations describe that machine and date; they are not minimum Organizer
+requirements or a claim that every user has the same available release.
+
+An optional local Codex Maintenance 0.1.1 adapter also passed its 25 tests and a
+real initialize/list/two-tool MCP stdio roundtrip after the CLI update. Its proxy
+readback used the existing daemon without starting a new server. Checkpoint
+verification and inspection succeeded, with no pending jobs. The configured
+model/effort, existing profile settings, permissions, task binding and completed
+job history were preserved. This adapter uses installed Model Switcher 0.5.2 and
+Task Checkpoint 0.8.3; none of those three packages is required by Organizer.
+
+The adapter is a machine/chat-bound local package, not part of this public skill.
+Selecting its installed plugin did not expose the two tools directly to the chat;
+the actual calls used its installed MCP stdio interface. Direct host attachment
+therefore remains unverified. Configuration readback is not per-turn inference
+telemetry. Disk health is measured directly; cached account allowance is labelled
+stale/unknown when appropriate, and fresh account readings remain on demand.
+
+### Plan and acceptance gates
+
+These are proposed follow-up packages, not completed capabilities or scheduled work.
+Each package needs current scope, permissions and an unoccupied matching task lease
+before execution. A successful native action must never be repeated merely because
+its listing is stale.
+
+| Order | Remaining limitation | Next work | Completion gate |
+|---|---|---|---|
+| 1 | Local maintenance tools are absent from the chat's native tool catalogue. | At a convenient user-controlled app reload, select the existing local plugin and inspect native discovery. If still absent, use supported MCP diagnostics and retain the working stdio fallback. | Both exact tools are exposed and called through the host, or the remaining host defect is documented with reproducible evidence. No completed task is resumed. |
+| 2 | There is no customization-aware update command for an existing Organizer installation. | Design an opt-in updater using an installed-version manifest, preview, changed-file detection, backup and refusal on conflicts. Keep the existing installer safe by default. | Tests cover a clean upgrade, locally edited files, partial failure, symlinks, rollback and byte-identical preservation on refusal. |
+| 3 | The optional maintenance adapter has a local root/chat binding and pinned inspector. | If distributing it is requested, create a separate portable package with explicit binding setup and version compatibility checks. Do not copy local manifests or private checkpoint data into this repository. | Clean-machine installation and two-tool discovery work with synthetic bindings; wrong roots/chats, changed inspector hashes and permission denial refuse safely. |
+| 4 | Native chat/sidebar readback can lag an accepted write. | Prefer a supported authoritative membership readback when the host provides it. Until then retain the accepted-but-unverified state and reconcile through independent evidence. | An integration scenario records before/after identity and membership without retrying an uncertain mutation. |
+| 5 | File actions cover local POSIX regular files on one filesystem. | Assess directory moves, cross-filesystem recovery and Windows as separate extensions, starting with reference/path/metadata preservation requirements. | Platform-specific tests and failure/recovery checks pass before any new capability is advertised. Existing refusal boundaries remain. |
+| 6 | Nested Git repositories require separate preservation. | Document and test a reusable export-and-manifest procedure before considering additional automation. | Each nested repository's history, ignored files, edits and ownership are independently recoverable; parent exclusions cannot hide unsaved work. |
+
+Routine bounded implementation can be assigned to Sol Medium, with consequential
+preservation and publication review assigned to Astra Extra High when authorized
+and available. These are future routing recommendations, not claims that a model
+was changed. Fresh allowance must be checked before substantial follow-up work;
+this plan creates no collector, background schedule or paid API budget.
