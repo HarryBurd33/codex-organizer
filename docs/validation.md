@@ -70,6 +70,14 @@ compared with the public source and were identical. The package validator and al
 continues to test Ubuntu/macOS with Python 3.11/3.13; a local pass does not establish
 the outcome of a new hosted run.
 
+The first update run reported Node.js 20 deprecations in the older CI action
+pins. The workflow now uses immutable commits from the latest stable
+[checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1) and
+[setup-python v7.1.0](https://github.com/actions/setup-python/releases/tag/v7.1.0)
+releases, verified on this date. Test commands, the four OS/Python combinations
+and read-only workflow permissions are unchanged. These action changes require
+their own hosted run; passing tests on the prior commit are insufficient.
+
 The authoring machine's desktop updater reported its configured production channel
 up to date. Its separate Homebrew Codex CLI was upgraded from 0.165.0 to the
 [latest stable 0.166.0 release](https://github.com/openai/codex/releases/tag/rust-v0.166.0).
